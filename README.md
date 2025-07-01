@@ -23,3 +23,6 @@ In the effect control panel click the `Options..` button at the top of the effec
 
 Set `Property::AE_Effect_Global_OutFlags_2(OutFlags2::empty())` in the build.rs.
 Removing the need for flattening the sequence data.
+
+Uncomment the comment in `lib.rs` to fix the bug - it appears that using zero sized sequence data causes a segfault
+when clicking the `options..` button.

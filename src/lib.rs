@@ -6,6 +6,33 @@ enum Params {}
 #[derive(Default)]
 struct Plugin {}
 
+// Uncomment me to fix the bug!
+//
+// impl AdobePluginInstance for u32 {
+//     fn flatten(&self) -> Result<(u16, Vec<u8>), Error> {
+//         Ok((
+//             std::mem::size_of::<u32>() as u16,
+//             self.to_be_bytes().to_vec(),
+//         ))
+//     }
+//     fn unflatten(_: u16, i: &[u8]) -> Result<Self, Error> {
+//         Ok(Self::from_be_bytes([i[0], i[1], i[2], i[3]]))
+//     }
+//
+//     fn render(&self, _: &mut PluginState, _: &Layer, _: &mut Layer) -> Result<(), ae::Error> {
+//         Ok(())
+//     }
+//     fn handle_command(&mut self, _: &mut PluginState, _: Command) -> Result<(), Error> {
+//         Ok(())
+//     }
+//
+//     fn do_dialog(&mut self, _: &mut PluginState) -> Result<(), ae::Error> {
+//         Ok(())
+//     }
+// }
+// ae::define_effect!(Plugin, u32, Params);
+
+// also comment me out
 ae::define_effect!(Plugin, (), Params);
 
 impl AdobePluginGlobal for Plugin {
