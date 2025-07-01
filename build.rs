@@ -33,7 +33,7 @@ fn main() {
                 | OutFlags::UseOutputExtent
                 | OutFlags::DeepColorAware,
         ),
-        Property::AE_Effect_Global_OutFlags_2(OutFlags2::SupportsGetFlattenedSequenceData),
+        Property::AE_Effect_Global_OutFlags_2(OutFlags2::empty()),
         Property::AE_Effect_Match_Name("bugrepro"),
         Property::AE_Reserved_Info(0),
         Property::AE_Effect_Support_URL("github/mobile-bungalow"),
